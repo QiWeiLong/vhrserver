@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qwl.qwlvhr.mapper.HrMapper">
+    <resultMap id="BaseResultMap" type="com.qwl.qwlvhr.bean.Hr">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="telephone" column="telephone"/>
+        <result property="address" column="address"/>
+        <result property="enabled" column="enabled"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="remark" column="remark"/>
+        <result property="userface" column="userface"/>
+    </resultMap>
+    <select id="getHrByUsername" resultMap="BaseResultMap">
+        select * from hr where username = #{username}
+    </select>
+
+</mapper>
